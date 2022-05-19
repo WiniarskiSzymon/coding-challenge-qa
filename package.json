@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "clean-reports": "rm -R -f reports/ && rm -R -f reports_mocha/",
+    "prepare-folders": "mkdir -p reports && mkdir -p reports_mocha/partial",
+    "pretest": "npm run clean-reports;npm run prepare-folders",
+    "cypress-tests": "cypress run --browser chrome ",
+    "combine-reports": " npx mochawesome-merge \"reports_mocha/partial/*.json\" > reports_mocha/mochawesome_full.json",
+    "generate-reports": "npx marge reports_mocha/mochawesome_full.json -o reports/full_report/",
+    "create-report": "npm run combine-reports; npm run generate-reports"
+  },
+  "dependencies": {
+    "cypress": "^9.1.0"
+  },
+  "devDependencies": {
+    "@types/mochawesome": "^6.2.1",
+    "@types/node": "^17.0.34",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.0.1",
+    "typescript": "^4.6.4"
+  }
+}
