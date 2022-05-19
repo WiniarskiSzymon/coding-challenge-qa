@@ -1,0 +1,31 @@
+{
+  "nodeVersion": "bundled",
+  "defaultCommandTimeout": 9000,
+  "responseTimeout": 15000,
+  "baseUrl": "https://ts-e2e-challenge.netlify.app/",
+  "env": {
+    "auth_url": "https://auth-provider.jk"
+  },
+  "reporter": "mochawesome",
+  "reporterOptions": {
+      "reportDir": "reports_mocha/partial",
+      "overwrite": false,
+      "html": true,
+      "json": true,
+      "charts": false,
+      "embeddedScreenshots" : true,
+      "inlineAssets": false
+  },
+  "retries": {
+    "runMode": 1,
+    "openMode": 0
+  },
+  "screenshotOnRunFailure": true,
+  "screenshotsFolder": "reports/full_report/assets/",
+  "downloadsFolder": "downloads",
+  "fixturesFolder": "fixtures",
+  "integrationFolder": "integration",
+  "pluginsFile": "plugins",
+  "supportFile": "support/index.ts",
+  "videosFolder": "reports/full_report/assets/"
+}
